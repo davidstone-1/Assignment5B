@@ -1,0 +1,15 @@
+/workspaces/Assignment5B/Assignment5B/bin/Debug/net8.0/Assignment5B
+/workspaces/Assignment5B/Assignment5B/bin/Debug/net8.0/Assignment5B.deps.json
+/workspaces/Assignment5B/Assignment5B/bin/Debug/net8.0/Assignment5B.runtimeconfig.json
+/workspaces/Assignment5B/Assignment5B/bin/Debug/net8.0/Assignment5B.dll
+/workspaces/Assignment5B/Assignment5B/bin/Debug/net8.0/Assignment5B.pdb
+/workspaces/Assignment5B/Assignment5B/obj/Debug/net8.0/Assignment5B.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/Assignment5B/Assignment5B/obj/Debug/net8.0/Assignment5B.AssemblyInfoInputs.cache
+/workspaces/Assignment5B/Assignment5B/obj/Debug/net8.0/Assignment5B.AssemblyInfo.cs
+/workspaces/Assignment5B/Assignment5B/obj/Debug/net8.0/Assignment5B.csproj.CoreCompileInputs.cache
+/workspaces/Assignment5B/Assignment5B/obj/Debug/net8.0/Assignment5B.sourcelink.json
+/workspaces/Assignment5B/Assignment5B/obj/Debug/net8.0/Assignment5B.dll
+/workspaces/Assignment5B/Assignment5B/obj/Debug/net8.0/refint/Assignment5B.dll
+/workspaces/Assignment5B/Assignment5B/obj/Debug/net8.0/Assignment5B.pdb
+/workspaces/Assignment5B/Assignment5B/obj/Debug/net8.0/Assignment5B.genruntimeconfig.cache
+/workspaces/Assignment5B/Assignment5B/obj/Debug/net8.0/ref/Assignment5B.dll
