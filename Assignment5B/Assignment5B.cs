@@ -18,9 +18,6 @@ namespace Assignment5B
 
             // Print the initialized map
             Printmap(map, width, height);
-
-            // Print the updated map - testing only
-            Updatemap(map, width, height, UpdateAmount);
             
         }
 
@@ -39,8 +36,6 @@ namespace Assignment5B
 
             return map;
         }
-
-        // Method to print the map to the console
         static void Printmap(char[,] map, int width, int height)
         {
             for (int i = 0; i < height; i++)
@@ -52,19 +47,5 @@ namespace Assignment5B
                 Console.WriteLine();
             }
         }
-
-        method Updatemap(char[,] map, int width, int height, int UpdateAmount)
-        {
-            int rowsToUpdate = Math.Min(UpdateAmount, height);
-            for (int i = 0; i < rowsToUpdate; i++)
-            {
-                for (int j = 0; j < width; j++)
-                {
-                    map[i, j] = 'X';
-                }
-            }
-            
-        }
-
     }
 }
