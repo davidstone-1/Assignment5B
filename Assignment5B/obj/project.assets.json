@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/workspaces/Assignment5B/Assignment5B/Assignment5B.csproj",
+      "projectUniqueName": "/home/codespace/Assignment5B/Assignment5B/Assignment5B.csproj",
       "projectName": "Assignment5B",
-      "projectPath": "/workspaces/Assignment5B/Assignment5B/Assignment5B.csproj",
+      "projectPath": "/home/codespace/Assignment5B/Assignment5B/Assignment5B.csproj",
       "packagesPath": "/home/codespace/.nuget/packages/",
-      "outputPath": "/workspaces/Assignment5B/Assignment5B/obj/",
+      "outputPath": "/home/codespace/Assignment5B/Assignment5B/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/codespace/.nuget/NuGet/NuGet.Config"

@@ -24,6 +24,7 @@ namespace Assignment5B
             var Selection = 0;
             while (Selection != 4)
             {
+            Console.WriteLine();
             Console.WriteLine("Options");
             Console.WriteLine("1. Clear Level");
             Console.WriteLine("2. Add Platform");
@@ -33,9 +34,16 @@ namespace Assignment5B
 
             Selection = int.Parse(Console.ReadLine());
             if (Selection == 1)
-            Console.WriteLine("[Clear Level]");
             {
-                Initializemap(width, height);
+                Console.WriteLine("[Clear Level]");
+            for (int i = 0; i < height; i++)
+            {
+                for (int j = 0; j < width; j++)
+                {
+                    map[i, j] = '_';
+                }
+            }
+                Printmap(map, width, height);
             }
 
             if (Selection == 2)
@@ -48,13 +56,18 @@ namespace Assignment5B
                 Console.Write("Enter Y Coordinate: ");
                 int Ycord = int.Parse(Console.ReadLine());
                 Console.WriteLine("Enter Length: ");
-                var platformLength = int.Parse(Console.ReadLine());
+                int platformLength = int.Parse(Console.ReadLine());
                 if (platformLength > width)
                 {
                     Console.WriteLine("This platform won’t fit in the level!");
                 }
+                else
+                {
+                    AddPlatform(map, Xcord, Ycord, platformLength, width, height);
 
-                AddPlatform(map, Xcord, Ycord, width, height);
+                }
+
+                
                 Printmap(map, width, height);
             }
 
@@ -91,16 +104,15 @@ namespace Assignment5B
 
             
         }
-        static void AddPlatform(char[,] map, int Xcord, int Ycord, int width, int height)
-        {  
+        static void AddPlatform(char[,] map, int xCord, int yCord, int platformLength, int width, int height)
+        {
             for (int i = 0; i < platformLength; i++)
             {
-                if (Xcord + i < width && Ycord < height);
+                if (xCord + i < width && yCord < height)
                 {
-                    map[Ycord, Xcord + i] = '=';
+                    map[yCord, xCord + i] = '=';
                 }
             }
-
         }
 
         static void Additem(char[,] map, int Xcord, int Ycord, int width, int height)
@@ -110,7 +122,7 @@ namespace Assignment5B
             var platformLength = int.Parse(Console.ReadLine());
             for (int i = 0; i < platformLength; i++)
             {
-                if (Xcord + i < width && Ycord < height)
+                if (Xcord + i < platformLength && Ycord < height)
                 {
                     map[Ycord, Xcord + i] = '=';
                 }
