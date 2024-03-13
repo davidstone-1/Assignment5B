@@ -1,20 +1,19 @@
 ﻿﻿using System;
-using System.ComponentModel.DataAnnotations;
 using System.Xml.Linq;
-
 namespace Assignment5B
 {
     class Program
     {
-        public static int platformLength { get; private set; }
+        public static int PlatformLength { get; private set; }
 
         static void Main(string[] args)
         {
-            Console.Write("Enter a level map width: ");
-            int width = int.Parse(Console.ReadLine());
+            Console.WriteLine("[FYE Level Map Creator]");
 
+            Console.Write("Enter a level map width: ");
+            var width = int.Parse(Console.ReadLine());
             Console.Write("Enter a level map height: ");
-            int height = int.Parse(Console.ReadLine());
+            var height = int.Parse(Console.ReadLine());
 
             // Initlize the map
             char[,] map = Initializemap(width, height);
@@ -35,19 +34,14 @@ namespace Assignment5B
             Selection = int.Parse(Console.ReadLine());
             if (Selection == 1)
             {
+                Console.WriteLine();
                 Console.WriteLine("[Clear Level]");
-            for (int i = 0; i < height; i++)
-            {
-                for (int j = 0; j < width; j++)
-                {
-                    map[i, j] = '_';
-                }
-            }
-                Printmap(map, width, height);
+                Printmap(Initializemap(width, height), width, height);
             }
 
             if (Selection == 2)
             {
+                Console.WriteLine();
                 Console.WriteLine("[Add Platform]");
 
                 Console.Write("Enter X Coordinate: ");
@@ -55,19 +49,18 @@ namespace Assignment5B
 
                 Console.Write("Enter Y Coordinate: ");
                 int Ycord = int.Parse(Console.ReadLine());
-                Console.WriteLine("Enter Length: ");
-                int platformLength = int.Parse(Console.ReadLine());
-                if (platformLength > width)
+
+                Console.Write("Enter Length: ");
+                int PlatformLength = int.Parse(Console.ReadLine());
+                if (PlatformLength > width)
                 {
                     Console.WriteLine("This platform won’t fit in the level!");
                 }
                 else
                 {
-                    AddPlatform(map, Xcord, Ycord, platformLength, width, height);
-
+                    AddPlatform(map, Xcord, Ycord, PlatformLength, width, height);
+                    Console.WriteLine();
                 }
-
-                
                 Printmap(map, width, height);
             }
 
@@ -84,7 +77,8 @@ namespace Assignment5B
                         Console.WriteLine("This is not a valid location!");
                     }
                 }
-
+                Console.WriteLine();
+                Console.WriteLine("[Add Item]");
                 Console.Write("Enter X Coordinate: ");
                 int Xcord = int.Parse(Console.ReadLine());
 
@@ -92,21 +86,19 @@ namespace Assignment5B
                 int Ycord = int.Parse(Console.ReadLine());
                 WriteToMap(map, Xcord, Ycord, 'P');
                 Printmap(map, width, height);
-
-
             }
             }
             if (Selection == 4)
             {
+                Console.WriteLine();
+                Printmap(Initializemap(width, height), width, height);
+                Console.WriteLine();
                 Console.WriteLine("Goodbye!");
             }
-
-
-            
         }
-        static void AddPlatform(char[,] map, int xCord, int yCord, int platformLength, int width, int height)
+        static void AddPlatform(char[,] map, int xCord, int yCord, int PlatformLength, int width, int height)
         {
-            for (int i = 0; i < platformLength; i++)
+            for (int i = 0; i < PlatformLength; i++)
             {
                 if (xCord + i < width && yCord < height)
                 {
@@ -114,22 +106,20 @@ namespace Assignment5B
                 }
             }
         }
-
         static void Additem(char[,] map, int Xcord, int Ycord, int width, int height)
         {
 
             Console.WriteLine("Enter Length: ");
-            var platformLength = int.Parse(Console.ReadLine());
-            for (int i = 0; i < platformLength; i++)
+            var PlatformLength = int.Parse(Console.ReadLine());
+            for (int i = 0; i < PlatformLength; i++)
             {
-                if (Xcord + i < platformLength && Ycord < height)
+                if (Xcord + i < PlatformLength && Ycord < height)
                 {
                     map[Ycord, Xcord + i] = '=';
                 }
             }
 
         }
-
         // This is the Method to initialize the map with underscores
         static char[,] Initializemap(int width, int height)
         {
@@ -145,9 +135,8 @@ namespace Assignment5B
 
             return map;
         }
-
         // Method to print the map to the console
-        static void Printmap(char[,] map, int width, int height)
+        public static void Printmap(char[,] map, int width, int height)
         {
             for (int i = 0; i < height; i++)
             {
@@ -155,10 +144,8 @@ namespace Assignment5B
                 {
                     Console.Write(map[i, j]);
                 }
-                Console.WriteLine();
+                Console.WriteLine("_");
             }
         }
-        
-
     }
 }
